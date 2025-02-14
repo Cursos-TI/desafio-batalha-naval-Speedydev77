@@ -36,5 +36,34 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
+    int matriz[7][7] = { //Criação do tamanho da matriz de 7 linhas (coordenadas X) e 7 colunas (coordenadas Y);
+                                    //coluna 0 //coluna 1 //coluna 2 //coluna 3 //coluna 4 //coluna 5 //coluna 6
+        {0,0,0,0,3,0,0}, //Linha 0 
+        {0,0,0,0,3,0,0}, //Linha 1
+        {0,0,0,0,3,0,0}, //Linha 2
+        {0,0,0,0,3,0,0}, //Linha 3
+        {0,0,0,0,0,0,0}, //Linha 4
+        {0,0,0,0,0,0,0}, //Linha 5
+        {0,0,3,3,3,3,0}, //Linha 6
+    };
+    /*
+    0 = Onde não tem navio;
+    3 = Onde tem navio;
+    */
+
+    printf("Battleship 1 |____/ \n");
+
+    for(int navio = 0, navio_1 = 4 ; navio <=3; navio++){
+        printf("Uma parte do navio 1 está localizado nas cooordenadas: X[%d] Y[%d]\n", navio, navio_1); //As coordenadas de X e Y representa uma matriz[X][Y] em que o valor seria 3 = Onde tem uma parte do navio;       
+    }
+
+    printf("\n");
+    
+    printf("Battleship 2 |____/ \n");
+
+    for(int navio = 6, navio_2 = 2 ; navio_2 <= 5; navio_2++){
+        printf("Uma parte do navio 2 está localizado nas cooordenadas: X[%d] Y[%d]\n", navio, navio_2); //As coordenadas de X e Y representa uma matriz[X][Y] em que o valor seria 3 = Onde tem uma parte do navio;        
+    }
+
     return 0;
 }

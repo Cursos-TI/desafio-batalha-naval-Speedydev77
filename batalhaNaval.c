@@ -36,33 +36,103 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
-    int matriz[7][7] = { //Criação do tamanho da matriz de 7 linhas (coordenadas X) e 7 colunas (coordenadas Y);
-                                    //coluna 0 //coluna 1 //coluna 2 //coluna 3 //coluna 4 //coluna 5 //coluna 6
-        {0,0,0,0,3,0,0}, //Linha 0 
-        {0,0,0,0,3,0,0}, //Linha 1
-        {0,0,0,0,3,0,0}, //Linha 2
-        {0,0,0,0,3,0,0}, //Linha 3
-        {0,0,0,0,0,0,0}, //Linha 4
-        {0,0,0,0,0,0,0}, //Linha 5
-        {0,0,3,3,3,3,0}, //Linha 6
+
+    
+    //Constantes para evitar repetição de valores e facilitar a leitura do código;
+
+    #define linhas10 10
+    #define colunas10 10
+
+    #define linhas0 0
+    #define colunas0 0
+
+    #define linhas1 1
+    #define colunas1 1
+
+    #define linhas2 2
+    #define colunas2 2
+
+    #define linhas4 4
+    #define colunas4 4
+
+    #define linhas8 8
+    #define colunas8 8
+
+    #define linhas9 9
+    #define colunas9 9
+
+    int matriz[linhas10][colunas10] = { //Criação do tamanho da matriz de 10 linhas (coordenadas X) e 10 colunas (coordenadas Y);
+                                    //coluna 0 //coluna 1 //coluna 2 //coluna 3 //coluna 4 //coluna 5 //coluna 6 //coluna 7 //coluna 8 //coluna 9
+    {0,3,0,0,0,3,0,0,0,0}, //Linha 0
+    {0,3,0,0,0,0,3,0,0,0}, //Linha 1
+    {0,3,0,0,0,0,0,3,0,0}, //Linha 2
+    {0,3,0,0,0,0,0,0,3,0}, //Linha 3
+    {0,0,0,3,0,0,0,0,0,0}, //Linha 4
+    {0,0,3,0,0,0,0,0,0,0}, //Linha 5
+    {0,3,0,0,0,0,0,0,0,0}, //Linha 6
+    {3,0,0,0,3,3,3,3,0,0}, //Linha 7
+    {0,0,0,0,0,0,0,0,0,0}, //Linha 8
+    {0,0,0,0,0,0,0,0,0,0}  //Linha 9
     };
     /*
     0 = Onde não tem navio;
     3 = Onde tem navio;
     */
 
-    printf("Battleship 1 |____/ \n");
+    /*
+    4 navios = vertical, horizontal, diagonal(cima), diagonal(baixo);
+    As estruturas de repetição otimiza o uso de vetores e matrizes;
+    As constantes representam valores inteiros de linhas[X] e colunas[Y];
+    Coordenada [X] = a
+    Coordenada [Y] = b
+    Quando o valor de [linhas] precisa ser constante e [colunas] precisa ser variável e incrementado, ou vice-versa = for aninhado com for é utilizado; 
+    Quando o valor de [linhas] e [colunas] precisa ser alterados ao mesmo tempo e testar apenas um [X] para cada [Y] = for aninhado com while é utilizado;
+    */
 
-    for(int navio = 0, navio_1 = 4 ; navio <=3; navio++){
-        printf("Uma parte do navio 1 está localizado nas cooordenadas: X[%d] Y[%d]\n", navio, navio_1); //As coordenadas de X e Y representa uma matriz[X][Y] em que o valor seria 3 = Onde tem uma parte do navio;       
+    printf("Battleship 1 |_____/ - Vertical \n"); //navio vertical
+
+    for(int a = 0; a < linhas4; a++){
+        for(int b = 1; b < colunas2; b++ ){
+            matriz[a][b];
+            printf("Parte do navio 1 está localizado na coordenada:X[%d]Y[%d]\n", a, b);
+
+        }
     }
 
     printf("\n");
-    
-    printf("Battleship 2 |____/ \n");
 
-    for(int navio = 6, navio_2 = 2 ; navio_2 <= 5; navio_2++){
-        printf("Uma parte do navio 2 está localizado nas cooordenadas: X[%d] Y[%d]\n", navio, navio_2); //As coordenadas de X e Y representa uma matriz[X][Y] em que o valor seria 3 = Onde tem uma parte do navio;        
+    printf("Battleship 2 |_____/ - Horizontal \n"); //navio horizontal
+
+    for(int a = 7; a < linhas8; a++){
+        for(int b = 4; b < colunas8; b++ ){
+            matriz[a][b];
+            printf("Parte do navio 2 está localizado na coordenada:X[%d]Y[%d]\n", a, b);
+
+        }
+    }
+
+    printf("\n");
+
+    printf("Battleship 3 |_____/ - Diagonal Cima \n"); //navio diagonal cima
+
+    for(int a = 0, b = 5; a < linhas4; a++, b++){
+        while(b < colunas9){
+            matriz[a][b];
+            printf("Parte do navio 3 está localizado na coordenada:X[%d]Y[%d]\n", a, b);
+            break;
+        }
+    }
+
+    printf("\n");
+
+    printf("Battleship 4 |_____/ - Diagonal Baixo \n"); //navio diagonal baixo
+
+    for(int a = 4, b = 3; a < linhas8; a++, b--){
+        while(b >= colunas0){
+            matriz[a][b];
+            printf("Parte do navio 4 está localizado na coordenada:X[%d]Y[%d]\n", a, b);
+            break;
+        }
     }
 
     return 0;

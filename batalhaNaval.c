@@ -137,6 +137,9 @@ int main() {
 
     printf("\n");
 
+
+
+
     //Exibição do tabuleiro de forma ordenada em linhas[x] e colunas[y];
     
     for(int x = 0; x < linhas10; x++){
@@ -146,6 +149,122 @@ int main() {
         }
         printf("\n");
     }
+
+
+
+
+    printf("\n");
+
+    printf("\nÁrea com habilidades:\n");
+
+    printf("\n===== Cone ^ =====\n");
+
+    /*
+    Declaração das variáveis de 3 matrizes para as 3 habilidades:
+    1 - Cone
+    2 - Octaedro
+    3 - Cruz
+    */
+
+    //Declaração de variáveis:
+
+    int cone[linhas10][colunas10];
+    int octaedro[linhas10][colunas10];
+    int cruz[linhas10][colunas10];
+
+    //A inicialização de valores é feita dentro do loop aninhado;
+
+    for(int x = 0; x < linhas10; x++){
+        for(int y = 0; y < colunas10; y++){
+
+            cone[x][y] = 0; //Para que todos os valores inicializem com 0: matriz[x][y] = 0, onde atribuí 0 para todos os valores;
+
+
+            if(cone[x][y] == 0){ //Se a condição for "true", os valores das coordenadas definidas serão iguais a 1;
+
+                //Ao juntar todas as coordenadas com valor = 1, a exibição terá formato de cone; 
+
+                cone[3][4] = 1;
+
+                cone[4][3] = 1;
+                cone[4][4] = 1;
+                cone[4][5] = 1;
+
+                cone[5][2] = 1;
+                cone[5][3] = 1;
+                cone[5][4] = 1;
+                cone[5][5] = 1;
+                cone[5][6] = 1;
+
+                printf("%d  ", cone[x][y]);
+
+            }
+
+        }
+        printf("\n");
+    }
+
+
+
+    printf("\n===== Octaedro <> =====\n");
+
+    for(int x = 0; x < linhas10; x++){
+        for(int y = 0; y < colunas10; y++){
+
+            octaedro[x][y] = 0; //Para que todos os valores inicializem com 0: matriz[x][y] = 0, onde atribuí 0 para todos os valores;
+
+            if(octaedro[x][y] == 0){ //Se a condição for "true", os valores das coordenadas definidas serão iguais a 1;
+
+                //Ao juntar todas as coordenadas com valor = 1, a exibição terá formato de octaedro;
+
+                octaedro[3][4] = 1;
+
+                octaedro[4][3] = 1;
+                octaedro[4][4] = 1;
+                octaedro[4][5] = 1;
+
+                octaedro[5][4] = 1;
+
+                printf("%d  ", octaedro[x][y]);
+
+            }
+    
+        }
+        printf("\n");
+    }
+
+
+
+    printf("\n===== Cruz + =====\n");
+
+    for(int x = 0; x < linhas10; x++){
+        for(int y = 0; y < colunas10; y++){
+
+            cruz[x][y] = 0; //Para que todos os valores inicializem com 0: matriz[x][y] = 0, onde atribuí 0 para todos os valores;
+
+            if(cruz[x][y] == 0){ //Se a condição for "true", os valores das coordenadas definidas serão iguais a 1;
+
+                //Ao juntar todas as coordenadas com valor = 1, a exibição terá formato de cruz;
+
+                cruz[3][4] = 1;
+
+                cruz[4][2] = 1;
+                cruz[4][3] = 1;
+                cruz[4][4] = 1;
+                cruz[4][5] = 1;
+                cruz[4][6] = 1;
+
+                cruz[5][4] = 1;
+
+                printf("%d  ", cruz[x][y]);
+
+            }
+            
+        }
+        printf("\n");
+    }
+
+    
 
     return 0;
 }

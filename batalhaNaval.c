@@ -137,12 +137,12 @@ int main() {
 
     printf("\n");
 
-
-
+    //Exibição do tabuleiro de forma ordenada em linhas[x] e colunas[y];
+    
     for(int x = 0; x < linhas10; x++){
         for(int y = 0; y < colunas10; y++){
 
-            printf("%d  ", matriz[x][y]);
+            printf("%d  ", matriz[x][y]); //Para cada x(0 a 9) será executado um bloco de código de y(0 a 9);
         }
         printf("\n");
     }

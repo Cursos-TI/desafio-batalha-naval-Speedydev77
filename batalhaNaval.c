@@ -135,5 +135,17 @@ int main() {
         }
     }
 
+    printf("\n");
+
+
+
+    for(int x = 0; x < linhas10; x++){
+        for(int y = 0; y < colunas10; y++){
+
+            printf("%d  ", matriz[x][y]);
+        }
+        printf("\n");
+    }
+
     return 0;
 }
